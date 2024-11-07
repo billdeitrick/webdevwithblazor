@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# 
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp\BlazorWebApp.csproj", "{43A1554E-DD60-4789-B588-ECB3424B5912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp.Client", "BlazorWebApp\BlazorWebApp.Client\BlazorWebApp.Client.csproj", "{F5193BA5-E061-4749-A743-EFD99012A9C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{1C2BEB9C-5716-4839-932D-12F8AAD113DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Models", "Data.Models\Data.Models.csproj", "{085A1438-2903-49C4-B97F-A7694A2DAC80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43A1554E-DD60-4789-B588-ECB3424B5912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A1554E-DD60-4789-B588-ECB3424B5912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A1554E-DD60-4789-B588-ECB3424B5912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A1554E-DD60-4789-B588-ECB3424B5912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5193BA5-E061-4749-A743-EFD99012A9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5193BA5-E061-4749-A743-EFD99012A9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5193BA5-E061-4749-A743-EFD99012A9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5193BA5-E061-4749-A743-EFD99012A9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2BEB9C-5716-4839-932D-12F8AAD113DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2BEB9C-5716-4839-932D-12F8AAD113DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2BEB9C-5716-4839-932D-12F8AAD113DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2BEB9C-5716-4839-932D-12F8AAD113DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{085A1438-2903-49C4-B97F-A7694A2DAC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085A1438-2903-49C4-B97F-A7694A2DAC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085A1438-2903-49C4-B97F-A7694A2DAC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085A1438-2903-49C4-B97F-A7694A2DAC80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
