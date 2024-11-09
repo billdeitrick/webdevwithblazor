@@ -1,0 +1,9 @@
+@page "/setfocus"
+@rendermode InteractiveAuto
+
+<input @ref="textInput" />
+<button @onclick="() => textInput.FocusAsync()" class="btn btn-primary">Set focus</button>
+
+@code {
+    ElementReference textInput;
+}

@@ -7,8 +7,22 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Data\Data.csproj" />
+        <ProjectReference Include="..\..\SharedComponents\SharedComponents.csproj" />
         <ProjectReference Include="..\BlazorWebApp.Client\BlazorWebApp.Client.csproj"/>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.10"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="**\*.config" />
+      <_ContentIncludedByDefault Remove="**\*.json" />
+      <_ContentIncludedByDefault Remove="**\*.cshtml" />
+      <_ContentIncludedByDefault Remove="**\*.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="**\*.razor" />
+      <UpToDateCheckInput Remove="**\*.cshtml" />
     </ItemGroup>
 
 </Project>
