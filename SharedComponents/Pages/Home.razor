@@ -2,24 +2,31 @@
 @using Data.Models.Interfaces
 @using Data.Models
 @inject IBlogApi _api
+@rendermode InteractiveServer
 
 <ul>
-    @foreach (var p in posts)
-    {
+    <Virtualize ItemsProvider="LoadPosts" Context="p">
         <li><a href="/Post/@p.Id">@p.Title</a></li>
-    }
+    </Virtualize>
 </ul>
 
 @code {
+    
+    public int totalBlogposts { get; set; }
 
-    protected List<BlogPost> posts = new();
-
-    protected override async Task OnInitializedAsync()
+    private async ValueTask<ItemsProviderResult<BlogPost>> LoadPosts(ItemsProviderRequest request)
     {
 
-        posts = await _api.GetBlogPostsAsync(10, 0);
-        await base.OnInitializedAsync();
+        if (totalBlogposts == 0)
+        {
+            totalBlogposts = await _api.GetBlogPostCountAsync();
+        }
 
+        var numblogposts = Math.Min(request.Count, totalBlogposts - request.StartIndex);
+        var blogposts = await _api.GetBlogPostsAsync(numblogposts, request.StartIndex);
+            
+        return new ItemsProviderResult<BlogPost>(blogposts, totalBlogposts);
+        
     }
 
 }  
