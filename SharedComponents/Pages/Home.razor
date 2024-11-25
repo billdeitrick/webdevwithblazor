@@ -1,14 +1,17 @@
 @page "/"
 @using Data.Models.Interfaces
 @using Data.Models
+@using Markdig
 @inject IBlogApi _api
 @rendermode InteractiveServer
 
-<ul>
-    <Virtualize ItemsProvider="LoadPosts" Context="p">
-        <li><a href="/Post/@p.Id">@p.Title</a></li>
-    </Virtualize>
-</ul>
+<Virtualize ItemsProvider="LoadPosts" Context="p">
+    <article>
+        <h2>@p.Title</h2>
+        @((MarkupString)Markdig.Markdown.ToHtml(new string(p.Text.Take(100).ToArray()), pipeline))
+        <a href="/Post/@p.Id">Read more</a>
+    </article>
+</Virtualize>
 
 @code {
     
@@ -27,6 +30,16 @@
             
         return new ItemsProviderResult<BlogPost>(blogposts, totalBlogposts);
         
+    }
+    
+    MarkdownPipeline pipeline;
+
+    protected override Task OnInitializedAsync()
+    {
+        pipeline = new MarkdownPipelineBuilder()
+            .UseEmojiAndSmiley()
+            .Build();
+        return base.OnInitializedAsync();
     }
 
 }  
